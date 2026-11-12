@@ -313,6 +313,7 @@ body.modal-aberto > *:not(dialog) {
     justify-content: flex-start;
     align-items: center;
     gap: 30px;
+    background-color: var(--branco);
 }
 
 .jujutsu {
