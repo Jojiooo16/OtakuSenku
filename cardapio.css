@@ -1,0 +1,1100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+/* ================= FONTES ================= */
+@font-face {
+    font-family: 'AnimeAce';
+    src: url('./fonts/animeace2_bld.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'JujutsuKaizen';
+    src: url('./fonts/Qetod.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BlackClover';
+    src: url('./fonts/FetteClassicUNZFraktur.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OnePiece';
+    src: url('./fonts/OnePiece-zAqL.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+ 
+/* ================= CORES ================= */
+:root {
+    --opaco: #f2954488;
+    --botao: #ff7543;
+    --orange: #D1541F;
+    --yellow: #FFFFC9;
+    --vermelho: #b10026;
+    --branco: white;
+    --preto: black;
+}
+.dark_mode {
+    --opaco: #ffce5a95;
+    --botao: #FFCD5A;
+    --orange: #D1541F;
+    --yellow: #ff6a00;
+    --vermelho: #A80800;
+    --branco: black;
+    --preto: white;
+}
+ 
+p {
+    font-family: 'JujutsuKaizen', Consolas, monospace;
+}
+ 
+/* ================= HEADER ================= */
+.menu-mobile {
+    display: contents;
+}
+.menu-toggle,
+.botao-menu,
+.so-mobile {
+    display: none;
+}
+ 
+menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    list-style-type: none;
+}
+.outro-menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 10%;
+    list-style-type: none;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 7vh;
+    background-color: var(--opaco);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.logo {
+    width: 6%;
+    height: 6vh;
+    margin-left: 20px;
+}
+.logo img {
+    width: 100%;
+    height: 6vh;
+}
+ 
+a {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'AnimeAce';
+    color: black;
+    text-decoration: none;
+}
+.entrar {
+    width: auto;
+    height: auto;
+    margin: 0;
+}
+ 
+.input {
+    width: 20%;
+    height: 5vh;
+    border: none;
+    border-radius: 5px;
+    font-family: 'AnimeAce';
+}
+ 
+.car {
+    font-family: 'AnimeAce';
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+}
+.car img {
+    width: 100%;
+    height: 100%;
+    margin-right: 10px;
+}
+ 
+/* ================= SWITCH (modo escuro) ================= */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 47px;
+    height: 25px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: var(--botao);
+    transition: 0.4s;
+    border-radius: 34px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--branco);
+    transition: 0.4s;
+    border-radius: 50%;
+}
+.switch input:checked + .slider {
+    background-color: var(--orange);
+}
+.switch input:checked + .slider:before {
+    transform: translateX(20px);
+}
+ 
+/* ================= MODAL ================= */
+dialog {
+    /* o reset "* { margin: 0 }" tira o centro automático, então voltamos com auto */
+    margin: auto;
+ 
+    width: min(92vw, 620px);
+    padding: 56px 48px 48px;
+    border: 4px solid var(--preto);
+    border-radius: 22px;
+    background-color: var(--vermelho);
+    color: white;
+    box-shadow: 12px 12px 0 var(--preto);
+    overflow: visible;
+}
+ 
+dialog[open] {
+    animation: aparecer 0.3s ease;
+}
+ 
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(-24px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+ 
+/* escurece o fundo (o desfoque é feito no body, porque funciona no Firefox) */
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.35);
+}
+ 
+/* RESTO DO SITE DESFOCADO */
+body > *:not(dialog) {
+    transition: filter 0.3s ease;
+}
+body.modal-aberto > *:not(dialog) {
+    filter: blur(8px);
+}
+ 
+.form-cadastro {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+ 
+.form-cadastro h2 {
+    font-family: 'OnePiece', 'AnimeAce', sans-serif;
+    font-size: clamp(2.2rem, 7vw, 3.4rem);
+    font-weight: normal;
+    text-align: center;
+    color: white;
+}
+ 
+.form-cadastro .subtitulo {
+    font-family: 'AnimeAce', sans-serif;
+    font-size: 1.05rem;
+    text-align: center;
+    margin-bottom: 8px;
+}
+ 
+.form-cadastro input {
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    border: 3px solid var(--preto);
+    border-radius: 12px;
+    background-color: white;
+    color: black;
+    font-family: 'AnimeAce', sans-serif;
+    font-size: 1.1rem;
+    outline: none;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+ 
+.form-cadastro input::placeholder {
+    font-family: 'AnimeAce', sans-serif;
+    color: #b10026;
+    opacity: 0.85;
+}
+ 
+.form-cadastro input:focus {
+    box-shadow: 0 0 0 4px var(--botao);
+    transform: scale(1.02);
+}
+ 
+.btn-cadastrar {
+    height: 62px;
+    margin-top: 6px;
+    border: 3px solid var(--preto);
+    border-radius: 12px;
+    background-color: var(--botao);
+    color: black;
+    font-family: 'AnimeAce', sans-serif;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: transform 0.15s, background-color 0.2s;
+}
+.btn-cadastrar:hover {
+    background-color: var(--orange);
+    transform: translateY(-3px);
+}
+.btn-cadastrar:active {
+    transform: translateY(0);
+}
+ 
+.fechar-x {
+    position: absolute;
+    top: -80px;
+    right: -64px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 3px solid var(--preto);
+    border-radius: 50%;
+    background-color: white;
+    color: #b10026;
+    font-size: 1.7rem;
+    line-height: 1;
+    cursor: pointer;
+}
+.fechar-x:hover {
+    background-color: var(--botao);
+}
+ 
+/*============================sec01====================================  */
+.sec01 {
+    position: relative;
+    width: 100%;
+}
+
+.sec01 .fundo {
+    background-image: url("combo_sushi_dr_stone_realista\ 1-1.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    aspect-ratio: 1886 / 850;
+}
+
+.titulo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1;                
+    color: white;
+    font-family: 'OnePiece', 'AnimeAce', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    background-color: var(--vermelho); 
+    padding: 10px 30px;
+    border-radius: 12px;
+}
+/* 
+========================sec02========================== */
+.sec02 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    color: var(--preto);
+    background-color: var(--branco);
+}
+
+.OnePiece {
+    width: 100%;
+    max-width: 1900px;
+}
+
+.produtos-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr); 
+    gap: 30px;
+    width: 100%;
+    justify-items: center;
+}
+
+.caixa-produtos {
+    background-color: var(--botao);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.caixa-produtos img {
+    width: 90%;
+}
+.caixa-produtos h2 {
+    font-family: 'AnimeAce';
+    font-size: 15px;
+}
+.direita {
+    margin-right: 9px;
+}
+.esquerda {
+    margin-left: 9px;
+}
+#usopp {
+    width: 100%;
+    height: auto;
+    margin-left: 25px;
+}
+.produtos-grid a {
+    background-color: var(--vermelho);
+    border-radius: 10px;
+    width: 60%;
+    height: auto;
+    padding: 10px 0;
+    margin: 0;
+}
+.receitas-sanji {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 250vh;
+}
+.receitas-sanji h1 {
+    font-family: 'OnePiece';
+    font-size: 50px;
+    margin: 50px;
+}
+.flex-receitas {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+.receitas-grid {
+    display: grid;
+    grid-template-rows: repeat(2,1fr);
+    width: 100%;
+}
+.receitas-grid2 {
+    display: grid;
+    grid-template-rows: repeat(3,1fr);
+    width: 100%;
+}
+.sanji-imagem {
+    height: 70%;
+}
+.sanji {
+    background-color: var(--orange);
+    border-radius: 30px;
+    width: 90%;
+    height: 40vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 10px;
+}
+.sanji img {
+    width: 50%;
+    height: 80%
+}
+.informa {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 90%;
+    align-items: center;
+}
+.informa h2 {
+    font-family: 'OnePiece';
+    font-size: 30px;
+}
+.informa a {
+    background-color: var(--vermelho);
+    width: 80%;
+    height: 10vh;
+    border-radius: 30px;
+}
+/* ===========================sec03====================== */
+.sec03 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    color: var(--preto);
+    background-color: var(--branco);
+}
+.DemonSlayer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.nsei .imgss {
+    width: 90%;
+    height: 70%;
+}
+.nsei h1 {
+    font-family: 'AnimeAce';
+    font-size: 20px;
+}
+.produtos-grid2 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr); 
+    gap: 30px;
+    width: 100%;
+    justify-items: center;
+}
+.baixo {
+    margin-bottom: 20px;
+}
+.DemonSlayer .nsei {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.caixa-produtos h2 {
+    width: 90%;
+}
+.caixa-produtos2 {
+    background-color: var(--botao);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    height: 70vh;
+    padding: 20px 0;
+    text-align: center;
+}
+.caixa-produtos2 img {
+    width: 90%;
+}
+.caixa-produtos2 h2 {
+    font-family: 'AnimeAce';
+    font-size: 15px;
+}
+.produtos-grid2 a {
+    background-color: var(--vermelho);
+    border-radius: 10px;
+    width: 60%;
+    height: auto;
+    padding: 10px 0;
+    margin: 0;
+}
+.produtos-grid3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr); 
+    gap: 30px;
+    width: 100%;
+    justify-items: center;
+}
+.produtos-grid3 a {
+    background-color: var(--vermelho);
+    border-radius: 10px;
+    width: 60%;
+    height: auto;
+    padding: 10px 0;
+    margin: 0;
+}
+/* ======================sec04========================= */
+.sec04 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    color: var(--preto);
+    background-color: var(--branco);
+}
+.produtos-grid4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr); 
+    gap: 30px;
+    width: 100%;
+    justify-items: center;
+}
+.produtos-grid4 a {
+    background-color: var(--vermelho);
+    border-radius: 10px;
+    width: 60%;
+    height: auto;
+    padding: 10px 0;
+    margin: 0;
+}
+.spyFamily {
+   display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; 
+}
+.imasss {
+    margin: 20px;
+    width: 30%;
+    height: auto;
+}
+
+.caixa-produtos4 {
+    background-color: var(--botao);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 65%;
+    height: 65vh;
+    padding: 20px 0;
+    text-align: center;
+}
+.caixa-produtos4 img {
+    width: 90%;
+}
+.caixa-produtos4 h2 {
+    font-family: 'AnimeAce';
+    font-size: 15px;
+}
+/* =========================sec05============================ */
+.sec05 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    color: var(--preto);
+    background-color: var(--branco);
+}
+.nanatsu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; 
+}
+
+.caixa-produtos5 {
+    background-color: var(--botao);
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    
+    padding: 20px 0;
+    text-align: center;
+}
+.caixa-produtos5 img {
+    width: 90%;
+}
+.caixa-produtos5 h2 {
+    font-family: 'AnimeAce';
+    font-size: 15px;
+}
+.produtos-grid5 a {
+    background-color: var(--vermelho);
+    border-radius: 10px;
+    width: 60%;
+    height: auto;
+    padding: 10px 0;
+    margin: 0;
+}
+.produtos-grid5 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr); 
+    gap: 30px;
+    width: 100%;
+    justify-items: center;
+}
+.produtos-grid5 a {
+    background-color: var(--vermelho);
+    border-radius: 10px;
+    width: 60%;
+    height: auto;
+    padding: 10px 0;
+    margin: 0;
+}
+/* ===================sec06=============================== */
+#bc {
+    background-color: #fff;
+}
+#demon {
+    background-color: #fff;
+}
+.sec06 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    color: var(--preto);
+    background-color: var(--branco);
+}
+.diariosApotecaria {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; 
+}
+/* ========================footer====================== */
+.footer {
+    width: 100%;
+    padding: 60px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    background-color: var(--botao);
+    color: black;
+}
+.informacoes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 100%;
+    max-width: 1900px;
+    justify-items: center;
+}
+.contato {
+    width: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+}
+.contato h1 {
+    font-family: 'OnePiece';
+    font-size: clamp(28px, 3vw, 45px);
+}
+.contato p {
+    font-family: 'AnimeAce';
+}
+.start {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1900px;
+}
+.footer img {
+    width: 250px;
+    max-width: 60%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+}
+.creditos {
+    background-color: var(--vermelho);
+    width: calc(100% + 40px);
+    margin: 0 -20px;
+    padding: 20px;
+    text-align: center;
+}
+.creditos p {
+    font-family: 'AnimeAce';
+    font-size: 0.9rem;
+    color: white;
+}
+
+.campo-senha {
+    position: relative;
+    width: 100%;
+}
+.form-cadastro .campo-senha input {
+    padding-right: 56px;
+}
+.btn-olho {
+    position: absolute;
+    top: 50%;
+    right: 14px;
+    transform: translateY(-50%);
+    border: none;
+    background: transparent;
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+/* =====================================================
+   RESPONSIVO
+   Tudo daqui para baixo só vale em telas menores.
+   No PC (acima de 1024px) o site fica igual ao original.
+   ===================================================== */
+
+/* ================= TABLET (até 1024px) ================= */
+@media (max-width: 1024px) {
+
+    img {
+        max-width: 100%;
+    }
+
+    /* grades de produtos: 3 colunas */
+    .produtos-grid,
+    .produtos-grid2,
+    .produtos-grid3,
+    .produtos-grid5 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-rows: auto;
+    }
+    .produtos-grid4 {
+        grid-template-rows: auto;
+    }
+
+    /* alturas fixas -> automáticas */
+    .receitas-sanji {
+        height: auto;
+    }
+    .caixa-produtos2,
+    .caixa-produtos4 {
+        height: auto;
+    }
+    .DemonSlayer .nsei {
+        height: auto;
+        gap: 20px;
+    }
+    .caixa-produtos4 {
+        width: 80%;
+    }
+
+    /* logos */
+    .sec02 > img {
+        width: 50%;
+        height: auto;
+    }
+    .imasss,
+    .nsei .imgss {
+        width: 45%;
+        height: auto;
+    }
+
+    /* Sanji */
+    .flex-receitas > img,
+    .sanji-imagem {
+        width: 28%;
+        height: auto;
+        object-fit: contain;
+    }
+    .sanji img {
+        width: 45%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+
+/* ================= HEADER MOBILE (até 900px) ================= */
+@media (max-width: 900px) {
+    .header {
+        height: 8vh;
+        min-height: 56px;
+    }
+    .logo {
+        width: 60px;
+        height: auto;
+        margin-left: 10px;
+    }
+    .logo img {
+        height: auto;
+    }
+
+    /* menu vira hambúrguer */
+    .menu-mobile {
+        display: block;
+        position: relative;
+        margin-right: auto;
+    }
+    .botao-menu {
+        display: block;
+        font-family: 'AnimeAce';
+        padding: 10px 15px;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+    .menu-principal {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: max-content;
+        min-width: 160px;
+        flex-direction: column;
+        align-items: stretch;
+        background-color: #f0f0f0;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        z-index: 200;
+    }
+    .menu-toggle:checked ~ .menu-principal {
+        display: flex;
+    }
+    .menu-principal li a {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 12px 20px;
+        justify-content: flex-start;
+    }
+    .menu-principal li a:hover {
+        background-color: var(--orange);
+    }
+    .so-mobile {
+        display: list-item;
+    }
+
+    /* "Entrar" vai para dentro do menu */
+    .outro-menu {
+        display: none;
+    }
+    .input {
+        width: 28%;
+        margin: 0 10px;
+    }
+
+    /* carrinho */
+    .car {
+        width: auto;
+        margin-right: 10px;
+    }
+    .car a {
+        width: auto;
+        height: auto;
+        margin: 0;
+        font-size: 0.9rem;
+        gap: 6px;
+    }
+    .car img {
+        width: 24px;
+        height: auto;
+        margin: 0;
+    }
+
+    /* modal */
+    dialog {
+        padding: 48px 24px 32px;
+    }
+    .fechar-x {
+        top: -66px;
+        right: -8px;
+    }
+}
+
+/* ================= TABLET PEQUENO (até 768px) ================= */
+@media (max-width: 768px) {
+
+    /* grades: 2 colunas */
+    .produtos-grid,
+    .produtos-grid2,
+    .produtos-grid3,
+    .produtos-grid4,
+    .produtos-grid5 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    /* esconde divs vazias usadas como espaçador */
+    .produtos-grid > div:empty,
+    .produtos-grid3 > div:empty {
+        display: none;
+    }
+
+    .caixa-produtos,
+    .caixa-produtos2,
+    .caixa-produtos4,
+    .caixa-produtos5 {
+        width: 90%;
+    }
+
+    /* tira os deslocamentos manuais das imagens */
+    .esquerda,
+    .direita {
+        margin: 0;
+    }
+    #usopp {
+        width: 90%;
+        margin: 0;
+        transform: translateX(4.5%);
+    }
+
+    /* título */
+    .titulo {
+        font-size: clamp(1.8rem, 8vw, 3rem);
+        padding: 6px 18px;
+        white-space: nowrap;
+    }
+
+    /* logos */
+    .sec02 > img {
+        width: 65%;
+    }
+    .imasss,
+    .nsei .imgss {
+        width: 65%;
+        margin: 10px auto;
+    }
+    .nsei h1 {
+        text-align: center;
+    }
+
+    /* receitas do Sanji */
+    .receitas-sanji h1 {
+        font-size: 36px;
+        margin: 30px 20px;
+        text-align: center;
+    }
+    .flex-receitas {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .flex-receitas > img,
+    .sanji-imagem {
+        width: 55%;
+        max-width: 320px;
+        height: auto;
+    }
+    .receitas-grid,
+    .receitas-grid2 {
+        grid-template-rows: none;
+        justify-items: center;
+    }
+    .sanji {
+        height: auto;
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 15px;
+    }
+    .sanji img {
+        width: 80%;
+        height: auto;
+    }
+    .informa {
+        height: auto;
+        gap: 12px;
+        text-align: center;
+    }
+    .informa h2 {
+        font-size: 24px;
+    }
+    .informa a {
+        height: auto;
+        padding: 12px 0;
+    }
+
+    /* footer */
+    .informacoes {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================= CELULAR (até 520px) ================= */
+@media (max-width: 520px) {
+
+    /* grades: 1 coluna */
+    .produtos-grid,
+    .produtos-grid2,
+    .produtos-grid3,
+    .produtos-grid4,
+    .produtos-grid5 {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .caixa-produtos,
+    .caixa-produtos2,
+    .caixa-produtos4,
+    .caixa-produtos5 {
+        width: 92%;
+    }
+    .caixa-produtos h2,
+    .caixa-produtos2 h2,
+    .caixa-produtos4 h2,
+    .caixa-produtos5 h2 {
+        font-size: 14px;
+    }
+    .produtos-grid a,
+    .produtos-grid2 a,
+    .produtos-grid3 a,
+    .produtos-grid4 a,
+    .produtos-grid5 a {
+        width: 70%;
+    }
+    .OnePiece {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    /* header: busca some */
+    .input {
+        display: none;
+    }
+
+    /* logos */
+    .sec02 > img {
+        width: 80%;
+    }
+    .imasss,
+    .nsei .imgss {
+        width: 80%;
+    }
+
+    /* Sanji */
+    .receitas-sanji h1 {
+        font-size: 30px;
+    }
+    .flex-receitas > img,
+    .sanji-imagem {
+        width: 70%;
+    }
+    .sanji {
+        width: 94%;
+    }
+    .informa h2 {
+        font-size: 20px;
+    }
+
+    .creditos p {
+        font-size: 0.75rem;
+    }
+}

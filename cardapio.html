@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otaku Senku</title>
+    <link rel="icon" type="image/x-icon" href="logo_otaku_senku_1.png">
+    <link rel="stylesheet" href="cardapio.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo"><img src="logo_otaku_senku_1.png" alt="Otaku Senku"></div>
+
+        <div class="menu-mobile">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="botao-menu">Menu</label>
+
+            <menu class="menu-principal">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="cardapio.html">Cardápio</a></li>
+                <li><a href="delivery.html">Delivery</a></li>
+                <li><a href="unidades.html">Unidades</a></li>
+                <li class="so-mobile"><a href="#" class="abrir-modal">Entrar/Cadastrar</a></li>
+            </menu>
+        </div>
+        
+        <label class="switch">
+            <input type="checkbox" id="meu-switch">
+            <span class="slider"></span>
+        </label>
+
+        <input type="text" placeholder="  Buscar..." class="input">
+
+        <menu class="outro-menu">
+            <li><a href="#" class="entrar abrir-modal">Entrar/Cadastrar</a></li>
+        </menu>
+
+        <div class="car"><a href="carrinho.html" id="a"><img src="car 1.png" alt="">Carrinho</a></div>
+    </header>
+
+    <!-- MODAL: fica fora do header, direto no body, para o resto da página poder ser desfocado -->
+    <dialog id="cadastro">
+        <form method="dialog" class="form-cadastro">
+            <button type="button" class="fechar-x" id="fecharModal" aria-label="Fechar">&times;</button>
+
+            <h2>Entrar / Cadastrar</h2>
+            <p class="subtitulo">Junte-se à nossa guilda otaku!</p>
+
+            <input type="text" placeholder="Nome completo" required>
+            <input type="email" placeholder="E-mail" required>
+            <input type="password" placeholder="Senha" required>
+            <input type="password" placeholder="Confirme sua senha" required>
+
+            <button type="submit" class="btn-cadastrar">Cadastrar</button>
+        </form>
+    </dialog>
+    <section class="sec01">
+        <div class="fundo"></div>
+        <h1 class="titulo">Cardápio</h1>
+    </section>
+    <section class="sec02">
+        <img src="One-Piece-Logo-removebg-preview.png" alt="">
+        <div class="OnePiece">
+
+            <div class="produtos-grid">
+
+                <div class="caixa-produtos">
+                    <img src="Frame 7.png" alt="" class="esquerda">
+                    <h2>Gear 5 - Luffy</h2>
+                    <h2>R$36.90</h2>
+                    <a href="" id="luffy">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos">
+                    <img src="Frame 8.png" alt="" class="direita">
+                    <h2>Santoryu Pound Ho - Zoro</h2>
+                    <h2>R$39.90</h2>
+                    <a href="" id="zoro">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos">
+                    <img src="Frame 9.png" alt="">
+                    <h2>Tunderbolt Tempo - Nami</h2>
+                    <h2>R$19.90</h2>
+                    <a href="" id="nami">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos">
+                    <img src="Frame 10.png" alt="" id="usopp">
+                    <h2>Hissatsu Midori Boshi - Usopp</h2>
+                    <h2>R$44.90</h2>
+                    <a href="" id="usoppp">Carrinho</a>
+                </div>
+                <div class="caixa-produtos">
+                    <img src="Frame 11.png" alt="">
+                    <h2>Concassé - Sanji</h2>
+                    <h2>R$29.90</h2>
+                    <a href="" id="sanji">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos">
+                    <img src="Frame 12.png" alt="" class="direita">
+                    <h2>Brain Point - Chopper</h2>
+                    <h2>R$18.90</h2>
+
+                    <a href="" id="chopper">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos">
+                    <img src="Frame 13.png" alt="">
+                    <h2>Demon Fleur - Robin</h2>
+                    <h2>R$34.90</h2>
+                    <a href="" id="robin">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos">
+                    <img src="Frame 15.png" alt="">
+                    <h2>Weapons Left - Franky</h2>
+                    <h2>R$12.90</h2>
+                    <a href="" id="franky">Carrinho</a>
+                </div>
+                <div></div>
+                <div class="caixa-produtos">
+                    <img src="Frame 16.png" alt="">
+                    <h2>Hanauta Sancho - Brook</h2>
+                    <h2>R$24.90</h2>
+                    <a href="" id="brook">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos">
+                    <img src="Frame 17.png" alt="">
+                    <h2>Buraikan - Jimbae</h2>
+                    <h2>R$32.90</h2>
+                    <a href="" id="jimbae">Carrinho</a>
+                </div>
+
+                <div></div>
+
+            </div>
+        </div>
+        <div class="receitas-sanji">
+            <h1>Receitas do Sanji</h1>
+            <div class="flex-receitas">
+                <img src="2f24c6313827f843e44d86d9c2105148_1-removebg-preview.png" alt="">
+                <div class="receitas-grid">
+                    <div class="sanji">
+                        <img src="frango_a_diable_banner 1.png" alt="">
+                        <div class="informa">
+                            <h2>Pernas de Frango à Diable</h2>
+                            <h2>R$37.99</h2>
+                            <a href="">Carrinho</a>
+                        </div>
+                    </div>
+                    <div class="sanji">
+                        <img src="espaguete_frutos_do_mar_banner 1.png" alt="">
+                        <div class="informa">
+                            <h2>Macarrão com Frutos do Mar</h2>
+                            <h2>R$49.99</h2>
+                            <a href="">Carrinho</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex-receitas">
+                <div class="receitas-grid2">
+                    <div class="sanji">
+                        <img src="arroz_frito_asiatico_banner 1.png" alt="">
+                        <div class="informa">
+                            <h2>Arroz Frito do Baratie</h2>
+                            <h2>R$47.99</h2>
+                            <a href="">Carrinho</a>
+                        </div>
+                    </div>
+                    <div class="sanji">
+                        <img src="sopa_batata_alho_poro_banner 1.png" alt="">
+                        <div class="informa">
+                            <h2>Sopa cremosa de batata e alho-poró</h2>
+                            <h2>R$39.99</h2>
+                            <a href="">Carrinho</a>
+                        </div>
+                    </div>
+                    <div class="sanji">
+                        <img src="sobremesa_tropical_camadas_banner 1.png" alt="">
+                        <div class="informa">
+                            <h2>Sobremesa de frutas do All Blue</h2>
+                            <h2>R$29.99</h2>
+                            <a href="">Carrinho</a>
+                        </div>
+                    </div>
+                </div>
+                <img class="sanji-imagem" src="d0e6f9afec285cfa0e357a401f003ca3-removebg-preview 1.png" alt="">
+
+            </div>
+        </div>
+    </section>
+    <section class="sec03">
+        <div class="DemonSlayer">
+            <div class="nsei">
+                <img class="imgss" id="demon" src="logo_demon_slayer-removebg-preview.png" alt="">
+                <h1>Combo Principal</h1>
+            </div>
+            <div class="produtos-grid2">
+
+                <div class="caixa-produtos">
+                    <img src="Frame 18.png" alt="" class="baixo">
+                    <h2>Hinokami Kagura - Tanjiro </h2>
+                    <h2>R$39.90</h2>
+                    <a href="" id="tanjiro">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos">
+                    <img src="Frame 19.png" alt="" class="baixo">
+                    <h2>Respiracão do trovão - Zenitsu</h2>
+                    <h2>R$32.90</h2>
+                    <a href="" id="zenitsu">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos">
+                    <img src="Frame 20.png" alt="" class="baixo">
+                    <h2>Respiracão da Fera - Inosuke</h2>
+                    <h2>R$44.90</h2>
+                    <a href="" id="inosuke">Carrinho</a>
+                </div>
+
+
+                <div class="caixa-produtos">
+                    <img src="Frame 21.png" alt="">
+                    <h2>Sangue Explosivo - Nezuko</h2>
+                    <h2>R$29.90</h2>
+                    <a href="" id="nezuko">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos">
+                    <img src="Frame 22.png" alt="" class="direita">
+                    <h2>Tsui no kata: Higan Shugan - Kanao</h2>
+                    <h2>R$34.90</h2>
+
+                    <a href="" id="kanao">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos">
+                    <img src="Frame 23.png" alt="">
+                    <h2>Balas de Perseguicão - Genya</h2>
+                    <h2>R$36.90</h2>
+                    <a href="" id="genya">Carrinho</a>
+                </div>
+
+            </div>
+            <div class="nsei">
+                <h1>Combo hashira</h1>
+            </div>
+            <div class="produtos-grid3">
+
+                <div class="caixa-produtos2">
+                    <img src="Frame 24.png" alt="">
+                    <h2>Respiracão da Pedra - Gyomei</h2>
+                    <h2>R$39.90</h2>
+                    <a href="" id="gyomei">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos2">
+                    <img src="Frame 25.png" alt="">
+                    <h2>Respiracão do Vento - Sanemi</h2>
+                    <h2>R$32.90</h2>
+                    <a href="" id="sanemi">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos2">
+                    <img src="Frame 26.png" alt="">
+                    <h2>Respiracão da Névoa - Tokito</h2>
+                    <h2>R$44.90</h2>
+                    <a href="" id="tokito">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos2">
+                    <img src="Frame 27.png" alt="">
+                    <h2>Respiracão da Água - Tomioka</h2>
+                    <h2>R$29.90</h2>
+                    <a href="" id="tomioka">Carrinho</a>
+                </div>
+                <div class="caixa-produtos2">
+                    <img src="Frame 28.png" alt="">
+                    <h2>Respiracão da Serpente - Obanai</h2>
+                    <h2>R$34.90</h2>
+                    <a href="" id="obanai">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos2">
+                    <img src="Frame 29.png" alt="">
+                    <h2>Respiracão do Amor - Mitsuri </h2>
+                    <h2>R$36.90</h2>
+
+                    <a href="" id="mitsuri">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos2">
+                    <img src="Frame 30-1.png" alt="">
+                    <h2>Delicia! - Rengoku</h2>
+                    <h2>R$29.90</h2>
+                    <a href="" id="rengoku">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos2">
+                    <img src="Frame 32.png" alt="">
+                    <h2>Extravagante - Uzui</h2>
+                    <h2>R$34.90</h2>
+                    <a href="" id="uzui">Carrinho</a>
+                </div>
+                <div class="caixa-produtos2">
+                    <img src="Frame 33.png" alt="">
+                    <h2>Respiracão do Inceto - Shinobu</h2>
+                    <h2>R$36.90</h2>
+                    <a href="" id="shinobu">Carrinho</a>
+                </div>
+
+
+
+                <div></div>
+
+            </div>
+        </div>
+    </section>
+    <section class="sec04">
+        <div class="spyFamily">
+            <img class="imasss" id="bc" src="Spy___Family_logo-removebg-preview.png" alt="">
+            <div class="produtos-grid4">
+
+                <div class="caixa-produtos4">
+                    <img src="Frame 34.png" alt="" class="baixo">
+                    <h2>Twilight - Loid Foger </h2>
+                    <h2>R$29.90</h2>
+                    <a href="" id="loid">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos4">
+                    <img src="Frame 35.png" alt="" class="baixo">
+                    <h2>Thorn Princess - Yor Foger</h2>
+                    <h2>R$34.90</h2>
+                    <a href="" id="yor">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos4">
+                    <img src="Frame 36.png" alt="" class="baixo">
+                    <h2>Paz Mundial - Anya</h2>
+                    <h2>R$29.90</h2>
+                    <a href="" id="anya">Carrinho</a>
+                </div>
+
+
+                <div class="caixa-produtos4">
+                    <img src="Frame 37.png" alt="">
+                    <h2>Spy Wars - Bond</h2>
+                    <h2>R$34.90</h2>
+                    <a href="" id="bond">Carrinho</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="sec05">
+        <div class="nanatsu">
+            <img class="imasss" src="0f487c1e55f2357e136c6020f823ef1a-removebg-preview.png" alt="">
+            <div class="produtos-grid5">
+
+                <div class="caixa-produtos5">
+                    <img src="Frame 38.png" alt="">
+                    <h2>IRA - Meliodas</h2>
+                    <h2>R$29.90</h2>
+                    <a href="" id="meliodas">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos5">
+                    <img src="Frame 39.png" alt="">
+                    <h2>Ellie Sangrenta - Elisabeth</h2>
+                    <h2>R$39.90</h2>
+                    <a href="" id="elisabeth">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos5">
+                    <img src="Frame 40.png" alt="">
+                    <h2>Ganância - Bam</h2>
+                    <h2>R$36.90</h2>
+                    <a href="" id="bam">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos5">
+                    <img src="Frame 41.png" alt="">
+                    <h2>Inveja - Diane</h2>
+                    <h2>R$29.90</h2>
+                    <a href="" id="diane">Carrinho</a>
+                </div>
+                <div class="caixa-produtos5">
+                    <img src="Frame 42.png" alt="">
+                    <h2>Preguiça - King</h2>
+                    <h2>R$36.90</h2>
+                    <a href="" id="king">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos5">
+                    <img src="Frame 43.png" alt="">
+                    <h2>Luxúria - Gother</h2>
+                    <h2>R$36.90</h2>
+
+                    <a href="" id="gother">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos5">
+                    <img src="Frame 44.png" alt="">
+                    <h2>Gula - Merlin</h2>
+                    <h2>R$34.90</h2>
+                    <a href="" id="merlin">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos5">
+                    <img src="Frame 45.png" alt="">
+                    <h2>Orgulho - Escanor</h2>
+                    <h2>R$34.90</h2>
+                    <a href="" id="escanor">Carrinho</a>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="sec06">
+        <div class="diariosApotecaria">
+            <img class="imasss" src="3mjErHRF4zRYIcdmK1jbAHL158m 1.png" alt="">
+            <div class="produtos-grid2">
+
+                <div class="caixa-produtos">
+                    <img src="Frame 46.png" alt="" class="baixo">
+                    <h2>Veneno - Maomao </h2>
+                    <h2>R$36.90</h2>
+                    <a href="" id="maomao">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos">
+                    <img src="Frame 47.png" alt="" class="baixo">
+                    <h2>Leque Violeta - Jinshi</h2>
+                    <h2>R$36.90</h2>
+                    <a href="" id="jinshi">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos">
+                    <img src="Frame 48.png" alt="" class="baixo">
+                    <h2>Pétalas de Morango - Concubina Gyokuyou</h2>
+                    <h2>R$44.90</h2>
+                    <a href="" id="inosuke">Carrinho</a>
+                </div>
+
+
+                <div class="caixa-produtos">
+                    <img src="Frame 49.png" alt="">
+                    <h2>Safira Boba - Concubina Lihua</h2>
+                    <h2>R$36.90</h2>
+                    <a href="" id="lihua">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos">
+                    <img src="Frame 50.png" alt="" class="direita">
+                    <h2>Flores de Lishu - Concubina Lishu</h2>
+                    <h2>R$36.90</h2>
+
+                    <a href="" id="lishu">Carrinho</a>
+                </div>
+
+                <div class="caixa-produtos">
+                    <img src="Frame 51.png" alt="">
+                    <h2>Arroz Samurai - Jin</h2>
+                    <h2>R$36.90</h2>
+                    <a href="" id="jin">Carrinho</a>
+                </div>
+
+            </div>
+    </section>
+    <footer class="footer">
+        <div class="informacoes">
+            <div class="contato">
+                <h1>Entre em contato para mais informações:</h1>
+                <p>(31) 9 7571-2465</p>
+                <p>(31) 9 8745-9254</p>
+            </div>
+            <div class="contato">
+                <h1>Unidades Principais:</h1>
+                <p>Unidade 1: Shopping Del Rey</p>
+                <p>Unidade 2: Savassi</p>
+                <p>Unidade 3: Pampulha</p>
+            </div>
+            <div class="contato">
+                <h1>Funcionamento:</h1>
+                <p>Funcionamento de Terça a Domingo</p>
+                <p>13:00 às 23:00</p>
+            </div>
+        </div>
+        <div class="start">
+            <img src="logo_otaku_senku_1.png" alt="">
+        </div>
+        <div class="creditos">
+            <p>&copy;Todos os direitos reservados por Giovanna Torquato Pedrosa e Sofia Izabela Bellico Reis </p>
+        </div>
+    </footer>
+</body>
+
+</html>
