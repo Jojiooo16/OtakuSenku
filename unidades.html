@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Otaku Senku</title>
+    <link rel="icon" type="image/x-icon" href="logo_otaku_senku_1.png">
+    <link rel="stylesheet" href="unidades.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo"><img src="logo_otaku_senku_1.png" alt=""></div>
+        <div class="menu-mobile">
+            <input type="checkbox" id="menu-toggle" class="menu-toggle">
+            <label for="menu-toggle" class="botao-menu">Menu</label>
+
+            <menu class="menu-principal">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="cardapio.html">Cardápio</a></li>
+                <li><a href="delivery.html">Delivery</a></li>
+                <li><a href="unidades.html">Unidades</a></li>
+                <li class="so-mobile"><a href="#" class="abrir-modal">Entrar/Cadastrar</a></li>
+            </menu>
+        </div>
+        <label class="switch">
+            <input type="checkbox" id="meu-switch">
+            <span class="slider"></span>
+        </label>
+
+        <input type="text" placeholder="  Buscar..." class="input">
+        <menu class="outro-menu">
+            <li><a href="#" class="entrar abrir-modal">Entrar/Cadastrar</a></li>
+        </menu>
+        <div class="car"><a href="carrinho.html" id="a"><img src="car 1.png" alt="">Carrinho</a></div>
+    </header>
+    <dialog id="cadastro">
+        <form method="dialog" class="form-cadastro">
+            <button type="button" class="fechar-x" id="fecharModal" aria-label="Fechar">&times;</button>
+ 
+            <h2>Entrar / Cadastrar</h2>
+            <p class="subtitulo">Junte-se à nossa guilda otaku!</p>
+ 
+            <input type="text" placeholder="Nome completo" required>
+            <input type="email" placeholder="E-mail" required>
+            <input type="password" placeholder="Senha" required>
+            <input type="password" placeholder="Confirme sua senha" required>
+ 
+            <button type="submit" class="btn-cadastrar">Cadastrar</button>
+        </form>
+    </dialog>
+    <section class="sec01">
+        <div class="gps">
+            <img src="Captura de tela 2026-11-05 142340.png" alt="">
+                <div>
+                    <h1>Otaku Senku</h1>
+                    <h2>Savassi - Rua Paraíba 294</h2>
+                    <a href="https://maps.app.goo.gl/Dkd9dDYsa6jKfoz48" target="_blank" rel="noopener noreferrer">GPS</a>
+                </div>
+            </img>
+        </div>
+         <div class="gps">
+            <img src="Captura de tela 2026-11-05 151322.png" alt="">
+                <div>
+                    <h1>Otaku Senku</h1>
+                    <h2>Pampulha - Av. Otalicio
+ Negrão de Lima 245</h2>
+                    <a href="https://maps.app.goo.gl/khryJQF1MkTtLmcX9" target="_blank" rel="noopener noreferrer">GPS</a>
+                </div>
+            </img>
+        </div>
+         <div class="gps">
+            <img src="Captura de tela 2026-11-05 151849.png" alt="">
+                <div>
+                    <h1>Otaku Senku</h1>
+                    <h2>Shopping Del Rey - 
+Último Piso</h2>
+                    <a href="https://maps.app.goo.gl/j9RC6dGGbd2N9uD27" target="_blank" rel="noopener noreferrer">GPS</a>
+                </div>
+            </img>
+        </div>
+    </section>
+    
+
+
+
+
+    <footer class="footer">
+        <div class="informacoes">
+            <div class="contato">
+                <h1>Entre em contato para mais informações:</h1>
+                <p>(31) 9 7571-2465</p>
+                <p>(31) 9 8745-9254</p>
+            </div>
+            <div class="contato">
+                <h1>Unidades Principais:</h1>
+                <p>Unidade 1: Shopping Del Rey</p>
+                <p>Unidade 2: Savassi</p>
+                <p>Unidade 3: Pampulha</p>
+            </div>
+            <div class="contato">
+                <h1>Funcionamento:</h1>
+                <p>Funcionamento de Terça a Domingo</p>
+                <p>13:00 às 23:00</p>
+            </div>
+        </div>
+        <div class="start">
+            <img src="logo_otaku_senku_1.png" alt="">
+        </div>
+        <div class="creditos">
+            <p>&copy;Todos os direitos reservados por Giovanna Torquato Pedrosa e Sofia Izabela Bellico Reis </p>
+        </div>
+    </footer>
+</body>

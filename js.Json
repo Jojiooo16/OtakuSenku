@@ -1,0 +1,212 @@
+{
+  "one_piece": [
+    {
+      "nome": "Santoryu Pound Ho - Roronoa Zoro",
+      "preco": 39.90
+    },
+    {
+      "nome": "Buraikan - Jimbae",
+      "preco": 32.90
+    },
+    {
+      "nome": "Hissatsu Midori Boshi - Usopp",
+      "preco": 44.90
+    },
+    {
+      "nome": "Concassé - Sanji",
+      "preco": 29.90
+    },
+    {
+      "nome": "Demon Fleur - Robin",
+      "preco": 34.90
+    },
+    {
+      "nome": "gear 5 - luffy",
+      "preco": 36.90
+    },
+    {
+      "nome": "Brain Point - Chopper",
+      "preco": 18.90
+    },
+    {
+      "nome": "Hanauta Sancho - Brook",
+      "preco": 24.90
+    },
+    {
+      "nome": "Thunderbolt Tempo - Nami",
+      "preco": 12.90
+    },
+    {
+      "nome": "Weapons Left - Franky",
+      "preco": 12.90
+    }
+  ],
+  "receitas_do_sanji": [
+    {
+      "nome": "Pernas de Frango à Diable",
+      "preco": 37.99
+    },
+    {
+      "nome": "Macarrão com frutos do mar",
+      "preco": 49.99
+    },
+    {
+      "nome": "Arroz frito do Baratie",
+      "preco": 47.99
+    },
+    {
+      "nome": "Sopa cremosa de batata e alho-poró",
+      "preco": 39.99
+    },
+    {
+      "nome": "Sobremesa de frutas do All Blue",
+      "preco": 29.99
+    }
+  ],
+  "demon_slayer": {
+    "combo_principal": [
+      {
+        "nome": "Hinokami Kagura - Tanjiro",
+        "preco": 39.90
+      },
+      {
+        "nome": "Respiração do trovão - Zenitsu",
+        "preco": 32.90
+      },
+      {
+        "nome": "Respiração da Besta - Inosuke",
+        "preco": 44.90
+      },
+      {
+        "nome": "Sangue Explosivo - Nezuko",
+        "preco": 29.90
+      },
+      {
+        "nome": "Tsui no kata: Higan Shugan - Kanao",
+        "preco": 34.90
+      },
+      {
+        "nome": "Balas de Perseguição - Genya",
+        "preco": 36.90
+      }
+    ],
+    "combo_hashira": [
+      {
+        "nome": "Respiração da Pedra - Gyomei",
+        "preco": 39.90
+      },
+      {
+        "nome": "Respiração do vento - Sanemi",
+        "preco": 32.90
+      },
+      {
+        "nome": "Respiração da Névoa - Tokito",
+        "preco": 44.90
+      },
+      {
+        "nome": "Respiração da Água - Tomioka",
+        "preco": 29.90
+      },
+      {
+        "nome": "Respiração das Serpentes - Obanai",
+        "preco": 34.90
+      },
+      {
+        "nome": "Respiração do Amor - Mitsuri",
+        "preco": 36.90
+      },
+      {
+        "nome": "Delícia - Rengoku",
+        "preco": 29.90
+      },
+      {
+        "nome": "Extravagante - Uzui",
+        "preco": 34.90
+      },
+      {
+        "nome": "Respiração do inseto - Shinobu",
+        "preco": 36.90
+      }
+    ]
+  },
+  "spy_x_family": [
+    {
+      "nome": "Twilight - Loid Foger",
+      "preco": 29.90
+    },
+    {
+      "nome": "Thorn Princess - Yor Foger",
+      "preco": 34.90
+    },
+    {
+      "nome": "Paz Mundial - Anya Foger",
+      "preco": 29.90
+    },
+    {
+      "nome": "Spy Wars - Bond",
+      "preco": 34.90
+    }
+  ],
+  "nanatsu_no_taizai": [
+    {
+      "nome": "IRA - Meliodas",
+      "preco": 29.90
+    },
+    {
+      "nome": "Ellie Sangrenta - Elisabeth",
+      "preco": 34.90
+    },
+    {
+      "nome": "Orgulho - Escanor",
+      "preco": 36.90
+    },
+    {
+      "nome": "Inveja - Diane",
+      "preco": 29.90
+    },
+    {
+      "nome": "Gula - Merlin",
+      "preco": 34.90
+    },
+    {
+      "nome": "Preguiça - King",
+      "preco": 36.90
+    },
+    {
+      "nome": "Ganância - Ban",
+      "preco": 36.90
+    },
+    {
+      "nome": "Luxuria - gowther",
+      "preco": 36.90
+    }
+  ],
+  "kusuriya_no_hitorigoto": [
+    {
+      "nome": "Veneno - Maomao",
+      "preco": 36.90
+    },
+    {
+      "nome": "Leque Violeta - jishi",
+      "preco": 36.90
+    },
+    {
+      "nome": "Pétalas de Morango - Concubina Gyokuyou",
+      "preco": 44.90
+    },
+    {
+      "nome": "Safira Boba - Concubina Lihua",
+      "preco": 36.90
+    },
+    {
+      "nome": "Flores de Lishu - Concubina Lishu",
+      "preco": 36.90
+    },
+    {
+      "nome": "Arroz Samurai - Jin",
+      "preco": 36.90
+    }
+  ]
+}
+
+

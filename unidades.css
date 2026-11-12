@@ -1,0 +1,528 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+/* ================= FONTES ================= */
+@font-face {
+    font-family: 'AnimeAce';
+    src: url('./fonts/animeace2_bld.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'JujutsuKaizen';
+    src: url('./fonts/Qetod.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BlackClover';
+    src: url('./fonts/FetteClassicUNZFraktur.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OnePiece';
+    src: url('./fonts/OnePiece-zAqL.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+ 
+/* ================= CORES ================= */
+:root {
+    --opaco: #f2954488;
+    --botao: #ff7543;
+    --orange: #D1541F;
+    --yellow: #FFFFC9;
+    --vermelho: #b10026;
+    --branco: white;
+    --preto: black;
+}
+.dark_mode {
+    --opaco: #ffce5a95;
+    --botao: #FFCD5A;
+    --orange: #D1541F;
+    --yellow: #ff6a00;
+    --vermelho: #A80800;
+    --branco: black;
+    --preto: white;
+}
+ 
+p {
+    font-family: 'JujutsuKaizen', Consolas, monospace;
+}
+ 
+/* ================= HEADER ================= */
+.menu-mobile {
+    display: contents;
+}
+.menu-toggle,
+.botao-menu,
+.so-mobile {
+    display: none;
+}
+ 
+menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    list-style-type: none;
+}
+.outro-menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 10%;
+    list-style-type: none;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 7vh;
+    background-color: var(--opaco);
+    position: sticky;
+    top: 0;
+}
+.logo {
+    width: 6%;
+    height: 6vh;
+    margin-left: 20px;
+}
+.logo img {
+    width: 100%;
+    height: 6vh;
+}
+ 
+a {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'AnimeAce';
+    color: black;
+    text-decoration: none;
+}
+.entrar {
+    width: auto;
+    height: auto;
+    margin: 0;
+}
+ 
+.input {
+    width: 20%;
+    height: 5vh;
+    border: none;
+    border-radius: 5px;
+    font-family: 'AnimeAce';
+}
+ 
+.car {
+    font-family: 'AnimeAce';
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+}
+.car img {
+    width: 100%;
+    height: 100%;
+    margin-right: 10px;
+}
+ 
+/* ================= SWITCH (modo escuro) ================= */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 47px;
+    height: 25px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: var(--botao);
+    transition: 0.4s;
+    border-radius: 34px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--branco);
+    transition: 0.4s;
+    border-radius: 50%;
+}
+.switch input:checked + .slider {
+    background-color: var(--orange);
+}
+.switch input:checked + .slider:before {
+    transform: translateX(20px);
+}
+ 
+/* ================= MODAL ================= */
+dialog {
+    /* o reset "* { margin: 0 }" tira o centro automático, então voltamos com auto */
+    margin: auto;
+ 
+    width: min(92vw, 620px);
+    padding: 56px 48px 48px;
+    border: 4px solid var(--preto);
+    border-radius: 22px;
+    background-color: var(--vermelho);
+    color: white;
+    box-shadow: 12px 12px 0 var(--preto);
+    overflow: visible;
+}
+ 
+dialog[open] {
+    animation: aparecer 0.3s ease;
+}
+ 
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(-24px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+ 
+/* escurece o fundo (o desfoque é feito no body, porque funciona no Firefox) */
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.35);
+}
+ 
+/* RESTO DO SITE DESFOCADO */
+body > *:not(dialog) {
+    transition: filter 0.3s ease;
+}
+body.modal-aberto > *:not(dialog) {
+    filter: blur(8px);
+}
+ 
+.form-cadastro {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+ 
+.form-cadastro h2 {
+    font-family: 'OnePiece', 'AnimeAce', sans-serif;
+    font-size: clamp(2.2rem, 7vw, 3.4rem);
+    font-weight: normal;
+    text-align: center;
+    color: white;
+}
+ 
+.form-cadastro .subtitulo {
+    font-family: 'AnimeAce', sans-serif;
+    font-size: 1.05rem;
+    text-align: center;
+    margin-bottom: 8px;
+}
+ 
+.form-cadastro input {
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    border: 3px solid var(--preto);
+    border-radius: 12px;
+    background-color: white;
+    color: black;
+    font-family: 'AnimeAce', sans-serif;
+    font-size: 1.1rem;
+    outline: none;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+ 
+.form-cadastro input::placeholder {
+    font-family: 'AnimeAce', sans-serif;
+    color: #b10026;
+    opacity: 0.85;
+}
+ 
+.form-cadastro input:focus {
+    box-shadow: 0 0 0 4px var(--botao);
+    transform: scale(1.02);
+}
+ 
+.btn-cadastrar {
+    height: 62px;
+    margin-top: 6px;
+    border: 3px solid var(--preto);
+    border-radius: 12px;
+    background-color: var(--botao);
+    color: black;
+    font-family: 'AnimeAce', sans-serif;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: transform 0.15s, background-color 0.2s;
+}
+.btn-cadastrar:hover {
+    background-color: var(--orange);
+    transform: translateY(-3px);
+}
+.btn-cadastrar:active {
+    transform: translateY(0);
+}
+ 
+.fechar-x {
+    position: absolute;
+    top: -80px;
+    right: -64px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 3px solid var(--preto);
+    border-radius: 50%;
+    background-color: white;
+    color: #b10026;
+    font-size: 1.7rem;
+    line-height: 1;
+    cursor: pointer;
+}
+.fechar-x:hover {
+    background-color: var(--botao);
+}
+ 
+/* ================= SEC01 (unidades) ================= */
+.sec01 {
+    width: 100%;
+    height: auto;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1900px;
+}
+.gps {
+    background-color: var(--botao);
+    border-radius: 30px;
+    width: 90%;
+    height: 50vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.gps img {
+    width: 50%;
+    height: 90%;
+    border-radius: 30px;
+}
+.gps div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 40vh;
+}
+.gps div h1 {
+    text-align: center;
+    font-family: 'JujutsuKaizen';
+    font-size: 50px;
+}
+.gps div h2 {
+    text-align: center;
+    font-family: 'OnePiece';
+    font-size: 30px;
+}
+.gps div a {
+    border-radius: 30px;
+    height: 10vh;
+    width: 50%;
+    margin-right: 0;
+    background-color: var(--vermelho);
+    color: white;
+}
+ 
+/* ================= FOOTER ================= */
+.footer {
+    width: 100%;
+    padding: 60px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    background-color: var(--botao);
+    color: black;
+}
+.informacoes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 100%;
+    max-width: 1900px;
+    justify-items: center;
+}
+.contato {
+    width: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+}
+.contato h1 {
+    font-family: 'OnePiece';
+    font-size: clamp(28px, 3vw, 45px);
+}
+.contato p {
+    font-family: 'AnimeAce';
+}
+.start {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1900px;
+}
+.footer img {
+    width: 250px;
+    max-width: 60%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+}
+.creditos {
+    background-color: var(--vermelho);
+    width: calc(100% + 40px);
+    margin: 0 -20px;
+    padding: 20px;
+    text-align: center;
+}
+.creditos p {
+    font-family: 'AnimeAce';
+    font-size: 0.9rem;
+    color: white;
+}
+ 
+/* ================= MOBILE ================= */
+@media (max-width: 520px) {
+ 
+    /* ---------- header ---------- */
+    .logo {
+        width: 60px;
+        height: auto;
+    }
+    .logo img {
+        height: auto;
+    }
+ 
+    .menu-mobile {
+        display: block;
+        position: relative;
+        margin-right: auto;
+    }
+    .botao-menu {
+        display: block;
+        font-family: 'AnimeAce';
+        padding: 10px 15px;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+    .menu-principal {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: max-content;
+        min-width: 160px;
+        flex-direction: column;
+        align-items: stretch;
+        background-color: #f0f0f0;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        z-index: 200;
+    }
+    .menu-toggle:checked ~ .menu-principal {
+        display: flex;
+    }
+    .menu-principal li a {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 12px 20px;
+        justify-content: flex-start;
+    }
+    .menu-principal li a:hover {
+        background-color: var(--orange);
+    }
+    .so-mobile {
+        display: list-item;
+    }
+ 
+    /* busca e "Entrar" saem do header (o Entrar fica dentro do Menu) */
+    .input,
+    .outro-menu {
+        display: none;
+    }
+ 
+    .car {
+        width: auto;
+        margin-right: 10px;
+    }
+    .car a {
+        width: auto;
+        font-size: 0.9rem;
+    }
+    .car a:hover {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+ 
+    /* ---------- modal ---------- */
+    dialog {
+        padding: 48px 24px 32px;
+    }
+    .fechar-x {
+        top: -66px;
+        right: -8px;
+    }
+ 
+    /* ---------- unidades ---------- */
+    .gps {
+        flex-direction: column;
+        height: auto;
+        padding: 16px 0;
+        gap: 16px;
+    }
+    .gps img {
+        width: 90%;
+        height: auto;
+    }
+    .gps div {
+        height: auto;
+        gap: 12px;
+    }
+    .gps div h1 {
+        font-size: 32px;
+    }
+    .gps div h2 {
+        font-size: 22px;
+        padding: 0 12px;
+    }
+    .gps div a {
+        width: 60%;
+        height: 7vh;
+    }
+ 
+    /* ---------- footer ---------- */
+    .informacoes {
+        grid-template-columns: 1fr;
+    }
+}
+ 

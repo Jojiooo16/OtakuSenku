@@ -1,0 +1,945 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+/* ================= FONTES ================= */
+@font-face {
+    font-family: 'AnimeAce';
+    src: url('./fonts/animeace2_bld.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'JujutsuKaizen';
+    src: url('./fonts/Qetod.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BlackClover';
+    src: url('./fonts/FetteClassicUNZFraktur.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'OnePiece';
+    src: url('./fonts/OnePiece-zAqL.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+ 
+/* ================= CORES ================= */
+:root {
+    --opaco: #f2954488;
+    --botao: #ff7543;
+    --orange: #D1541F;
+    --yellow: #FFFFC9;
+    --vermelho: #b10026;
+    --branco: white;
+    --preto: black;
+}
+.dark_mode {
+    --opaco: #ffce5a95;
+    --botao: #FFCD5A;
+    --orange: #D1541F;
+    --yellow: #ff6a00;
+    --vermelho: #A80800;
+    --branco: black;
+    --preto: white;
+}
+ 
+p {
+    font-family: 'JujutsuKaizen', Consolas, monospace;
+}
+ 
+/* ================= HEADER ================= */
+.menu-mobile {
+    display: contents;
+}
+.menu-toggle,
+.botao-menu,
+.so-mobile {
+    display: none;
+    z-index: 100;
+}
+ 
+menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+    list-style-type: none;
+    z-index: 100;
+}
+.outro-menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 10%;
+    list-style-type: none;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 7vh;
+    background-color: var(--opaco);
+    position: sticky;
+    top: 0;
+}
+.logo {
+    width: 6%;
+    height: 6vh;
+    margin-left: 20px;
+}
+.logo img {
+    width: 100%;
+    height: 6vh;
+}
+ 
+a {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'AnimeAce';
+    color: black;
+    text-decoration: none;
+    z-index: 1;
+}
+.entrar {
+    width: auto;
+    height: auto;
+    margin: 0;
+}
+ 
+.input {
+    width: 20%;
+    height: 5vh;
+    border: none;
+    border-radius: 5px;
+    font-family: 'AnimeAce';
+}
+ 
+.car {
+    font-family: 'AnimeAce';
+    margin-right: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+}
+.car img {
+    width: 100%;
+    height: 100%;
+    margin-right: 10px;
+}
+ 
+/* ================= SWITCH (modo escuro) ================= */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 47px;
+    height: 25px;
+}
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background-color: var(--botao);
+    transition: 0.4s;
+    border-radius: 34px;
+}
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--branco);
+    transition: 0.4s;
+    border-radius: 50%;
+}
+.switch input:checked + .slider {
+    background-color: var(--orange);
+}
+.switch input:checked + .slider:before {
+    transform: translateX(20px);
+}
+ .header {
+    z-index: 100;
+}
+/* ================= MODAL ================= */
+dialog {
+    /* o reset "* { margin: 0 }" tira o centro automático, então voltamos com auto */
+    margin: auto;
+ 
+    width: min(92vw, 620px);
+    padding: 56px 48px 48px;
+    border: 4px solid var(--preto);
+    border-radius: 22px;
+    background-color: var(--vermelho);
+    color: white;
+    box-shadow: 12px 12px 0 var(--preto);
+    overflow: visible;
+}
+ 
+dialog[open] {
+    animation: aparecer 0.3s ease;
+}
+ 
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(-24px) scale(0.95); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+ 
+/* escurece o fundo (o desfoque é feito no body, porque funciona no Firefox) */
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.35);
+}
+ 
+/* RESTO DO SITE DESFOCADO */
+body > *:not(dialog) {
+    transition: filter 0.3s ease;
+}
+body.modal-aberto > *:not(dialog) {
+    filter: blur(8px);
+}
+ 
+.form-cadastro {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+ 
+.form-cadastro h2 {
+    font-family: 'OnePiece', 'AnimeAce', sans-serif;
+    font-size: clamp(2.2rem, 7vw, 3.4rem);
+    font-weight: normal;
+    text-align: center;
+    color: white;
+}
+ 
+.form-cadastro .subtitulo {
+    font-family: 'AnimeAce', sans-serif;
+    font-size: 1.05rem;
+    text-align: center;
+    margin-bottom: 8px;
+}
+ 
+.form-cadastro input {
+    width: 100%;
+    height: 60px;
+    padding: 0 20px;
+    border: 3px solid var(--preto);
+    border-radius: 12px;
+    background-color: white;
+    color: black;
+    font-family: 'AnimeAce', sans-serif;
+    font-size: 1.1rem;
+    outline: none;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+ 
+.form-cadastro input::placeholder {
+    font-family: 'AnimeAce', sans-serif;
+    color: #b10026;
+    opacity: 0.85;
+}
+ 
+.form-cadastro input:focus {
+    box-shadow: 0 0 0 4px var(--botao);
+    transform: scale(1.02);
+}
+ 
+.btn-cadastrar {
+    height: 62px;
+    margin-top: 6px;
+    border: 3px solid var(--preto);
+    border-radius: 12px;
+    background-color: var(--botao);
+    color: black;
+    font-family: 'AnimeAce', sans-serif;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: transform 0.15s, background-color 0.2s;
+}
+.btn-cadastrar:hover {
+    background-color: var(--orange);
+    transform: translateY(-3px);
+}
+.btn-cadastrar:active {
+    transform: translateY(0);
+}
+ 
+.fechar-x {
+    position: absolute;
+    top: -80px;
+    right: -64px;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 3px solid var(--preto);
+    border-radius: 50%;
+    background-color: white;
+    color: #b10026;
+    font-size: 1.7rem;
+    line-height: 1;
+    cursor: pointer;
+}
+.fechar-x:hover {
+    background-color: var(--botao);
+}
+ 
+/* ================= SEC01 ================= */
+.sec01 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--branco);
+}
+.imgs {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin-left: 5%;
+    z-index: -0.5;
+}
+.dark_mode .imgs img {
+    filter: invert(1);
+   
+}
+.sushi {
+    width: 50%;
+    height: 50%;
+}
+ 
+/* ================= SEC02 (referências de anime) ================= */
+.sec02 {
+    width: 100%;
+    height: 160vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1900px;
+    color: white;
+    background-color: var(--vermelho);
+}
+.blackClover {
+    font-family: 'JujutsuKaizen';
+    font-size: 70px;
+    text-align: center;
+    width: 80%;
+    margin: 50px;
+    color: white;
+}
+.animes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-content: center;
+    align-items: center;
+    justify-items: center;
+    margin: 50px;
+}
+.animes img {
+    width: 80%;
+    height: 40%;
+}
+#demonslayer {
+    width: 70%;
+    height: 100%;
+}
+ 
+/* ================= SEC03 (sobremesas) ================= */
+.sec03 {
+    width: 100%;
+    height: 190vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--orange);
+    color: var(--preto);
+}
+.sec03 h1 {
+    font-family: 'AnimeAce';
+    font-size: 20px;
+    text-align: center;
+}
+.sobremesas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+.flex-grid {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    justify-content: center;
+    align-items: center;
+}
+.flex-grid .principal {
+    width: 100%;
+    margin: 20px;
+}
+#tamanho {
+    width: 40%;
+}
+ 
+/* ================= SEC04 (avaliações) ================= */
+.sec04 {
+    width: 100%;
+    min-height: 130vh;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    background-color: var(--branco);
+    color: var(--preto);
+}
+.avaliacoes-titulo {
+    max-width: 100%;
+}
+.avaliacao {
+    display: flex;
+    width: 90%;
+    max-width: 1000px;
+    background-color: var(--orange);
+    border-radius: 30px;
+    overflow: hidden;
+    transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+.avaliacao-conteudo {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+.avaliacao-topo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.avaliacao-nome {
+    font-family: 'JujutsuKaizen';
+    font-size: 2rem;
+}
+.avaliacao-estrelas {
+    height: 30px;
+    width: auto;
+    transition: transform 0.6s ease;
+}
+.avaliacao-texto {
+    font-family: 'AnimeAce';
+    line-height: 1.6;
+}
+.avaliacao-img {
+    width: 40%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+.avaliacao:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+.avaliacao:hover .avaliacao-img {
+    transform: scale(1.08);
+}
+.avaliacao:hover .avaliacao-estrelas {
+    transform: scale(1.1);
+}
+.avaliacao--inversa {
+    flex-direction: row-reverse;
+}
+ 
+/* ================= SEC05 (parcerias) ================= */
+.sec05 {
+    width: 100%;
+    min-height: 90vh;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    color: var(--preto);
+    background-color: var(--yellow);
+}
+.sec05 h1 {
+    font-family: 'OnePiece';
+    font-size: 60px;
+}
+.imagens-sushi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+/* ================= SEC06 (lojas) ================= */
+.sec06 {
+    width: 100%;
+    min-height: 70vh;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    background-color: var(--orange);
+    color: var(--preto);
+}
+.sec06 h1 {
+    font-family: 'OnePiece';
+    font-size: 100px;
+}
+.imagens-lojas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+    justify-items: center;
+}
+.loja {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+.loja img {
+    width: 80%;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+}
+.loja p {
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: 'AnimeAce';
+}
+ 
+/* ================= FOOTER ================= */
+.footer {
+    width: 100%;
+    padding: 60px 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    background-color: var(--botao);
+    color: black;
+}
+.informacoes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    width: 100%;
+    max-width: 1900px;
+    justify-items: center;
+}
+.contato {
+    width: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 15px;
+}
+.contato h1 {
+    font-family: 'OnePiece';
+    font-size: clamp(28px, 3vw, 45px);
+}
+.contato p {
+    font-family: 'AnimeAce';
+}
+.start {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 1900px;
+}
+.footer img {
+    width: 250px;
+    max-width: 60%;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+}
+.creditos {
+    background-color: var(--vermelho);
+    width: calc(100% + 40px);
+    margin: 0 -20px;
+    padding: 20px;
+    text-align: center;
+}
+.creditos p {
+    font-family: 'AnimeAce';
+    font-size: 0.9rem;
+    color: white;
+}
+
+
+/* =====================================================
+   RESPONSIVO
+   Tudo daqui para baixo só vale em telas menores.
+   No PC (acima de 1024px) o site fica igual ao original.
+   (substitui o antigo @media (max-width: 520px))
+   ===================================================== */
+
+
+/* ================= TABLET (até 1024px) ================= */
+@media (max-width: 1024px) {
+
+    img {
+        max-width: 100%;
+    }
+
+    /* ---------- sec02 ---------- */
+    .sec02 {
+        height: auto;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+    .blackClover {
+        font-size: 50px;
+        margin: 20px 0;
+    }
+    .animes {
+        grid-template-rows: none;
+        gap: 20px;
+        margin: 20px 0;
+    }
+    .animes img,
+    #demonslayer {
+        height: auto;
+    }
+
+    /* ---------- sec03 ---------- */
+    .sec03 {
+        height: auto;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+    .sec03 h1 {
+        font-size: 18px;
+        padding: 0 10px;
+    }
+    .sobremesas {
+        grid-template-rows: none;
+        gap: 20px;
+        width: 100%;
+    }
+    .flex-grid {
+        width: 80%;
+        height: auto;
+    }
+
+    /* ---------- sec05 e sec06 ---------- */
+    .sec05 h1 {
+        font-size: 50px;
+    }
+    .sec06 h1 {
+        font-size: 70px;
+    }
+}
+
+
+/* ================= HEADER MOBILE (até 900px) ================= */
+@media (max-width: 900px) {
+
+    .header {
+        height: 8vh;
+        min-height: 56px;
+    }
+    .logo {
+        width: 60px;
+        height: auto;
+        margin-left: 10px;
+    }
+    .logo img {
+        height: auto;
+    }
+
+    /* menu vira hambúrguer */
+    .menu-mobile {
+        display: block;
+        position: static;
+        margin-right: auto;
+    }
+    .botao-menu {
+        display: block;
+        font-family: 'AnimeAce';
+        padding: 10px 15px;
+        cursor: pointer;
+        white-space: nowrap;
+    }
+    .menu-principal {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: max-content;
+        min-width: 160px;
+        padding: 12px 0;
+        flex-direction: column;
+        align-items: stretch;
+        background-color: #f0f0f0;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        z-index: 200;
+    }
+    .menu-toggle:checked ~ .menu-principal {
+        display: flex;
+    }
+    .menu-principal li a {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        padding: 12px 20px;
+        justify-content: flex-start;
+    }
+    .menu-principal li a:hover {
+        background-color: var(--orange);
+    }
+    .so-mobile {
+        display: list-item;
+    }
+
+    /* "Entrar" vai para dentro do menu */
+    .outro-menu {
+        display: none;
+    }
+    .input {
+        width: 28%;
+        margin: 0 10px;
+    }
+
+    /* carrinho */
+    .car {
+        width: auto;
+        margin-right: 10px;
+    }
+    .car a {
+        width: auto;
+        height: auto;
+        margin: 0;
+        font-size: 0.9rem;
+        gap: 6px;
+    }
+    .car img {
+        width: 24px;
+        height: auto;
+        margin: 0;
+    }
+
+    /* modal */
+    dialog {
+        padding: 48px 24px 32px;
+    }
+    .fechar-x {
+        top: -66px;
+        right: -8px;
+    }
+}
+
+
+/* ================= TABLET PEQUENO (até 768px) ================= */
+@media (max-width: 768px) {
+
+    /* ---------- sec02 ---------- */
+    .blackClover {
+        font-size: 40px;
+        width: 90%;
+    }
+    .animes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* ---------- sec03 ---------- */
+    .sec03 h1 {
+        font-size: 16px;
+    }
+    .sobremesas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .flex-grid .principal {
+        margin: 10px 0;
+    }
+
+    /* ---------- sec04 ---------- */
+    .sec04 {
+        min-height: auto;
+        padding: 40px 16px;
+    }
+    .avaliacao-conteudo {
+        padding: 20px;
+    }
+    .avaliacao-nome {
+        font-size: 1.6rem;
+    }
+    .avaliacao-img {
+        width: 35%;
+    }
+
+    /* ---------- sec05 ---------- */
+    .sec05 {
+        min-height: auto;
+    }
+    .sec05 h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+    .imagens-sushi {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .imagens-sushi img {
+        max-width: 45%;
+        height: auto;
+    }
+
+    /* ---------- sec06 ---------- */
+    .sec06 {
+        min-height: auto;
+    }
+    .sec06 h1 {
+        font-size: 56px;
+    }
+
+    /* ---------- footer ---------- */
+    .informacoes {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    .contato {
+        width: 90%;
+    }
+}
+
+
+/* ================= CELULAR (até 520px) ================= */
+@media (max-width: 520px) {
+
+    /* busca sai do header */
+    .input {
+        display: none;
+    }
+    .car a:hover {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+
+    /* ---------- sec01 ---------- */
+    .sec01 {
+        flex-direction: column-reverse;
+        height: 70vh;
+    }
+    .sec01 img {
+        margin: 10px;
+    }
+    .imgs {
+        width: 50%;
+        height: 50%;
+    }
+    .imgs img {
+        width: 100%;
+        height: 100%;
+    }
+    .imgs .img {
+        width: 40%;
+        height: 40%;
+    }
+
+    /* ---------- sec02 ---------- */
+    .sec02 {
+        padding: 30px 12px;
+    }
+    .blackClover {
+        font-size: 32px;
+    }
+    .animes {
+        gap: 16px;
+    }
+    .logo-anime {
+        width: 30%;
+        height: 10vh;
+    }
+
+    /* ---------- sec03 ---------- */
+    .sec03 h1 {
+        font-size: 15px;
+    }
+    .flex-grid {
+        width: 90%;
+    }
+
+    /* ---------- sec04 ---------- */
+    .avaliacao,
+    .avaliacao--inversa {
+        flex-direction: column;
+    }
+    .avaliacao-img {
+        width: 100%;
+        height: 250px;
+    }
+    .avaliacao-topo {
+        flex-wrap: wrap;
+    }
+    .avaliacao-nome {
+        font-size: 1.4rem;
+    }
+
+    /* ---------- sec05 ---------- */
+    .sec05 h1 {
+        font-size: 36px;
+    }
+    .imagens-sushi {
+        flex-direction: column;
+    }
+    .imagens-sushi img {
+        max-width: 90%;
+        margin: 10px;
+        height: auto;
+    }
+
+    /* ---------- sec06 ---------- */
+    .sec06 h1 {
+        font-size: 40px;
+    }
+    .imagens-lojas {
+        grid-template-columns: 1fr;
+    }
+    .loja img {
+        width: 90%;
+        height: auto;
+    }
+    .loja p {
+        font-size: 15px;
+    }
+
+    /* ---------- footer ---------- */
+    .creditos p {
+        font-size: 0.75rem;
+    }
+}
