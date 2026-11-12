@@ -1,212 +1,723 @@
-{
-  "one_piece": [
-    {
-      "nome": "Santoryu Pound Ho - Roronoa Zoro",
-      "preco": 39.90
-    },
-    {
-      "nome": "Buraikan - Jimbae",
-      "preco": 32.90
-    },
-    {
-      "nome": "Hissatsu Midori Boshi - Usopp",
-      "preco": 44.90
-    },
-    {
-      "nome": "Concassé - Sanji",
-      "preco": 29.90
-    },
-    {
-      "nome": "Demon Fleur - Robin",
-      "preco": 34.90
-    },
-    {
-      "nome": "gear 5 - luffy",
-      "preco": 36.90
-    },
-    {
-      "nome": "Brain Point - Chopper",
-      "preco": 18.90
-    },
-    {
-      "nome": "Hanauta Sancho - Brook",
-      "preco": 24.90
-    },
-    {
-      "nome": "Thunderbolt Tempo - Nami",
-      "preco": 12.90
-    },
-    {
-      "nome": "Weapons Left - Franky",
-      "preco": 12.90
-    }
-  ],
-  "receitas_do_sanji": [
-    {
-      "nome": "Pernas de Frango à Diable",
-      "preco": 37.99
-    },
-    {
-      "nome": "Macarrão com frutos do mar",
-      "preco": 49.99
-    },
-    {
-      "nome": "Arroz frito do Baratie",
-      "preco": 47.99
-    },
-    {
-      "nome": "Sopa cremosa de batata e alho-poró",
-      "preco": 39.99
-    },
-    {
-      "nome": "Sobremesa de frutas do All Blue",
-      "preco": 29.99
-    }
-  ],
-  "demon_slayer": {
-    "combo_principal": [
-      {
-        "nome": "Hinokami Kagura - Tanjiro",
-        "preco": 39.90
-      },
-      {
-        "nome": "Respiração do trovão - Zenitsu",
-        "preco": 32.90
-      },
-      {
-        "nome": "Respiração da Besta - Inosuke",
-        "preco": 44.90
-      },
-      {
-        "nome": "Sangue Explosivo - Nezuko",
-        "preco": 29.90
-      },
-      {
-        "nome": "Tsui no kata: Higan Shugan - Kanao",
-        "preco": 34.90
-      },
-      {
-        "nome": "Balas de Perseguição - Genya",
-        "preco": 36.90
-      }
-    ],
-    "combo_hashira": [
-      {
-        "nome": "Respiração da Pedra - Gyomei",
-        "preco": 39.90
-      },
-      {
-        "nome": "Respiração do vento - Sanemi",
-        "preco": 32.90
-      },
-      {
-        "nome": "Respiração da Névoa - Tokito",
-        "preco": 44.90
-      },
-      {
-        "nome": "Respiração da Água - Tomioka",
-        "preco": 29.90
-      },
-      {
-        "nome": "Respiração das Serpentes - Obanai",
-        "preco": 34.90
-      },
-      {
-        "nome": "Respiração do Amor - Mitsuri",
-        "preco": 36.90
-      },
-      {
-        "nome": "Delícia - Rengoku",
-        "preco": 29.90
-      },
-      {
-        "nome": "Extravagante - Uzui",
-        "preco": 34.90
-      },
-      {
-        "nome": "Respiração do inseto - Shinobu",
-        "preco": 36.90
-      }
-    ]
+"site": {
+    "name": "Otaku Senku",
+    "url": "https://jojiooo16.github.io/improved-pancake/",
+    "language": "pt-BR",
+    "source_checked_at": "2026-11-12"
   },
-  "spy_x_family": [
+  "navigation": [
     {
-      "nome": "Twilight - Loid Foger",
-      "preco": 29.90
+      "label": "Início",
+      "url": "https://jojiooo16.github.io/improved-pancake/index.html"
     },
     {
-      "nome": "Thorn Princess - Yor Foger",
-      "preco": 34.90
+      "label": "Cardápio",
+      "url": "https://jojiooo16.github.io/improved-pancake/cardapio.html"
     },
     {
-      "nome": "Paz Mundial - Anya Foger",
-      "preco": 29.90
+      "label": "Delivery",
+      "url": "https://jojiooo16.github.io/improved-pancake/delivery.html"
     },
     {
-      "nome": "Spy Wars - Bond",
-      "preco": 34.90
+      "label": "Unidades",
+      "url": "https://jojiooo16.github.io/improved-pancake/unidades.html"
+    },
+    {
+      "label": "Entrar/Cadastrar",
+      "url": "https://jojiooo16.github.io/improved-pancake/",
+      "type": "modal_or_login"
+    },
+    {
+      "label": "Carrinho",
+      "url": "https://jojiooo16.github.io/improved-pancake/carrinho.html"
     }
   ],
-  "nanatsu_no_taizai": [
-    {
-      "nome": "IRA - Meliodas",
-      "preco": 29.90
+  "shared_account_dialog": {
+    "title": "Entrar / Cadastrar",
+    "message": "Junte-se à nossa guilda otaku!",
+    "button_label": "Cadastrar"
+  },
+  "pages": {
+    "home": {
+      "url": "https://jojiooo16.github.io/improved-pancake/",
+      "title": "Otaku Senku",
+      "hero": {
+        "quote": "Eu sou um cozinheiro. E para um cozinheiro, alimentar as pessoas é o dever mais importante.",
+        "attribution": "Sanji",
+        "images": [
+          "image 1.png",
+          "image 2.png",
+          "uramaki_senku_com_rosto.png"
+        ]
+      },
+      "sections": [
+        {
+          "id": "referencias-anime",
+          "title": "Referencias de comida de anime que tivemos",
+          "anime_logo_images": [
+            "dn_da_dan-removebg-preview.png",
+            "3mjErHRF4zRYIcdmK1jbAHL158m 1.png",
+            "Demon-Slayer-Logo 2.png",
+            "One-Piece-Logo-removebg-preview.png",
+            "Spy___Family_logo-removebg-preview.png",
+            "Jujutsu_Kaisen_logo-removebg-preview (1).png",
+            "0f487c1e55f2357e136c6020f823ef1a-removebg-preview.png",
+            "Dr._Stone_logo-removebg-preview (1).png"
+          ]
+        },
+        {
+          "id": "aniversario",
+          "title": "Seu aniversário? Vem comemorar com agente comendo uma sobremesa de um anime de sua preferencia!!!",
+          "featured_food_anime_pairs": [
+            {
+              "food_image": "mini-bolinhas-douradas-na-caixa 1.png",
+              "anime_logo": "dn_da_dan-removebg-preview.png"
+            },
+            {
+              "food_image": "sapo-chocolate-roxo-maior 1.png",
+              "anime_logo": "3mjErHRF4zRYIcdmK1jbAHL158m 1.png"
+            },
+            {
+              "food_image": "chapeu_branco_fita_preta_prato_corrigido 1.png",
+              "anime_logo": "Demon-Slayer-Logo 2.png"
+            },
+            {
+              "food_image": "sobremesa-cabeca-merry 1.png",
+              "anime_logo": "One-Piece-Logo-removebg-preview.png"
+            },
+            {
+              "food_image": "unnamed 2.png",
+              "anime_logo": "Spy___Family_logo-removebg-preview.png"
+            },
+            {
+              "food_image": "sobremesa-gojo-prison-chocolate 1.png",
+              "anime_logo": "Jujutsu_Kaisen_logo-removebg-preview (1).png"
+            },
+            {
+              "food_image": "porca_doce_caixa_6_realista 1.png",
+              "anime_logo": "0f487c1e55f2357e136c6020f823ef1a-removebg-preview.png"
+            },
+            {
+              "food_image": "bolo_terra_prato_fundo_neutro 1.png",
+              "anime_logo": "Dr._Stone_logo-removebg-preview (1).png"
+            }
+          ]
+        },
+        {
+          "id": "avaliacoes",
+          "title": "Avaliações dos clientes",
+          "reviews": [
+            {
+              "name": "Marco.M",
+              "rating_stars": 5,
+              "text": "Eu amei a experiência no Otaku Senku! Os sushis são deliciosos e as referências aos animes deixam tudo mais divertido. Já quero experimentar o cardápio inteiro! Esse Respiração da Besta foi o que eu mais gostei.",
+              "image": "espeto_peixe_empanado_espada_inosuke 1.png"
+            },
+            {
+              "name": "Bianca.A",
+              "rating_stars": 5,
+              "text": "Sou fã de anime e achei a ideia incrível! Os pratos são criativos, muito bonitos e saborosos. O ambiente temático deixa a experiência ainda melhor. Recomendo demais!Meu prato favorito é Thorn Princess.",
+              "image": "doce_espinho_da_rosa_yor_quadrado 1.png"
+            },
+            {
+              "name": "Leonardo.M",
+              "rating_stars": 5,
+              "text": "“O Otaku Senku conquistou meu coração! A mistura de sushi com referências dos meus animes favoritos é perfeita. Tudo é feito com muita criatividade. Com certeza voltarei! minha bebida favorita foi IRA.",
+              "image": "image 6.png"
+            }
+          ],
+          "banner_image": "Avalia-es-04-11-2026.png"
+        },
+        {
+          "id": "parcerias",
+          "title": "Nossas Parcerias",
+          "images": [
+            "logo-trans-borda-1-sushi-400x114-removebg-preview 1.png",
+            "mobile05394487838-removebg-preview 1.png",
+            "ifood-removebg-preview 1.png"
+          ]
+        },
+        {
+          "id": "loja",
+          "title": "Nossa Loja",
+          "stores": [
+            {
+              "label": "Loja do Shopping Del Rey",
+              "image": "otaku_senku_storefront.png"
+            },
+            {
+              "label": "Loja Física",
+              "image": "unnamed.png"
+            }
+          ]
+        }
+      ],
+      "footer": {
+        "contact_phones": [
+          "(31) 9 7571-2465",
+          "(31) 9 8745-9254"
+        ],
+        "main_locations": [
+          "Shopping Del Rey",
+          "Savassi",
+          "Pampulha"
+        ],
+        "opening_hours": {
+          "days": "Terça a Domingo",
+          "opens": "13:00",
+          "closes": "23:00"
+        },
+        "copyright": "©Todos os direitos reservados por Giovanna Torquato Pedrosa e Sofia Izabela Bellico Reis"
+      }
     },
-    {
-      "nome": "Ellie Sangrenta - Elisabeth",
-      "preco": 34.90
+    "cardapio": {
+      "url": "https://jojiooo16.github.io/improved-pancake/cardapio.html",
+      "title": "Cardápio",
+      "currency": "BRL",
+      "sections": [
+        {
+          "name": "One Piece",
+          "products": [
+            {
+              "name": "Gear 5 - Luffy",
+              "price": {
+                "amount": "36.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 7.png"
+            },
+            {
+              "name": "Santoryu Pound Ho - Zoro",
+              "price": {
+                "amount": "39.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 8.png"
+            },
+            {
+              "name": "Tunderbolt Tempo - Nami",
+              "price": {
+                "amount": "19.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 9.png"
+            },
+            {
+              "name": "Hissatsu Midori Boshi - Usopp",
+              "price": {
+                "amount": "44.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 10.png"
+            },
+            {
+              "name": "Concassé - Sanji",
+              "price": {
+                "amount": "29.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 11.png"
+            },
+            {
+              "name": "Brain Point - Chopper",
+              "price": {
+                "amount": "18.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 12.png"
+            },
+            {
+              "name": "Demon Fleur - Robin",
+              "price": {
+                "amount": "34.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 13.png"
+            },
+            {
+              "name": "Weapons Left - Franky",
+              "price": {
+                "amount": "12.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 15.png"
+            },
+            {
+              "name": "Hanauta Sancho - Brook",
+              "price": {
+                "amount": "24.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 16.png"
+            },
+            {
+              "name": "Buraikan - Jimbae",
+              "price": {
+                "amount": "32.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 17.png"
+            }
+          ]
+        },
+        {
+          "name": "Receitas do Sanji",
+          "products": [
+            {
+              "name": "Pernas de Frango à Diable",
+              "price": {
+                "amount": "37.99",
+                "currency": "BRL"
+              },
+              "image": null
+            },
+            {
+              "name": "Macarrão com Frutos do Mar",
+              "price": {
+                "amount": "49.99",
+                "currency": "BRL"
+              },
+              "image": null
+            },
+            {
+              "name": "Arroz Frito do Baratie",
+              "price": {
+                "amount": "47.99",
+                "currency": "BRL"
+              },
+              "image": null
+            },
+            {
+              "name": "Sopa cremosa de batata e alho-poró",
+              "price": {
+                "amount": "39.99",
+                "currency": "BRL"
+              },
+              "image": null
+            },
+            {
+              "name": "Sobremesa de frutas do All Blue",
+              "price": {
+                "amount": "29.99",
+                "currency": "BRL"
+              },
+              "image": null
+            }
+          ]
+        },
+        {
+          "name": "Demon Slayer — Combo Principal",
+          "products": [
+            {
+              "name": "Hinokami Kagura - Tanjiro",
+              "price": {
+                "amount": "39.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 18.png"
+            },
+            {
+              "name": "Respiracão do trovão - Zenitsu",
+              "price": {
+                "amount": "32.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 19.png"
+            },
+            {
+              "name": "Respiracão da Fera - Inosuke",
+              "price": {
+                "amount": "44.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 20.png"
+            },
+            {
+              "name": "Sangue Explosivo - Nezuko",
+              "price": {
+                "amount": "29.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 21.png"
+            },
+            {
+              "name": "Tsui no kata: Higan Shugan - Kanao",
+              "price": {
+                "amount": "34.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 22.png"
+            },
+            {
+              "name": "Balas de Perseguicão - Genya",
+              "price": {
+                "amount": "36.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 23.png"
+            }
+          ]
+        },
+        {
+          "name": "Demon Slayer — Combo hashira",
+          "products": [
+            {
+              "name": "Respiracão da Pedra - Gyomei",
+              "price": {
+                "amount": "39.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 24.png"
+            },
+            {
+              "name": "Respiracão do Vento - Sanemi",
+              "price": {
+                "amount": "32.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 25.png"
+            },
+            {
+              "name": "Respiracão da Névoa - Tokito",
+              "price": {
+                "amount": "44.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 26.png"
+            },
+            {
+              "name": "Respiracão da Água - Tomioka",
+              "price": {
+                "amount": "29.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 27.png"
+            },
+            {
+              "name": "Respiracão da Serpente - Obanai",
+              "price": {
+                "amount": "34.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 28.png"
+            },
+            {
+              "name": "Respiracão do Amor - Mitsuri",
+              "price": {
+                "amount": "36.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 29.png"
+            },
+            {
+              "name": "Delicia! - Rengoku",
+              "price": {
+                "amount": "29.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 30-1.png"
+            },
+            {
+              "name": "Extravagante - Uzui",
+              "price": {
+                "amount": "34.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 32.png"
+            },
+            {
+              "name": "Respiracão do Inceto - Shinobu",
+              "price": {
+                "amount": "36.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 33.png"
+            }
+          ]
+        },
+        {
+          "name": "Spy x Family",
+          "products": [
+            {
+              "name": "Twilight - Loid Foger",
+              "price": {
+                "amount": "29.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 34.png"
+            },
+            {
+              "name": "Thorn Princess - Yor Foger",
+              "price": {
+                "amount": "34.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 35.png"
+            },
+            {
+              "name": "Paz Mundial - Anya",
+              "price": {
+                "amount": "29.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 36.png"
+            },
+            {
+              "name": "Spy Wars - Bond",
+              "price": {
+                "amount": "34.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 37.png"
+            }
+          ]
+        },
+        {
+          "name": "Nanatsu no Taizai",
+          "products": [
+            {
+              "name": "IRA - Meliodas",
+              "price": {
+                "amount": "29.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 38.png"
+            },
+            {
+              "name": "Ellie Sangrenta - Elisabeth",
+              "price": {
+                "amount": "39.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 39.png"
+            },
+            {
+              "name": "Ganância - Bam",
+              "price": {
+                "amount": "36.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 40.png"
+            },
+            {
+              "name": "Inveja - Diane",
+              "price": {
+                "amount": "29.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 41.png"
+            },
+            {
+              "name": "Preguiça - King",
+              "price": {
+                "amount": "36.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 42.png"
+            },
+            {
+              "name": "Luxúria - Gother",
+              "price": {
+                "amount": "36.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 43.png"
+            },
+            {
+              "name": "Gula - Merlin",
+              "price": {
+                "amount": "34.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 44.png"
+            },
+            {
+              "name": "Orgulho - Escanor",
+              "price": {
+                "amount": "34.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 45.png"
+            }
+          ]
+        },
+        {
+          "name": "Seção identificada visualmente pelo logo de Diários da Apotecária",
+          "visual_reference": "3mjErHRF4zRYIcdmK1jbAHL158m 1.png",
+          "note": "O site não apresenta um título textual claro para esse grupo; a associação é feita pelo contêiner visual e seu logo.",
+          "products": [
+            {
+              "name": "Veneno - Maomao",
+              "price": {
+                "amount": "36.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 46.png"
+            },
+            {
+              "name": "Leque Violeta - Jinshi",
+              "price": {
+                "amount": "36.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 47.png"
+            },
+            {
+              "name": "Pétalas de Morango - Concubina Gyokuyou",
+              "price": {
+                "amount": "44.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 48.png"
+            },
+            {
+              "name": "Safira Boba - Concubina Lihua",
+              "price": {
+                "amount": "36.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 49.png"
+            },
+            {
+              "name": "Flores de Lishu - Concubina Lishu",
+              "price": {
+                "amount": "36.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 50.png"
+            },
+            {
+              "name": "Arroz Samurai - Jin",
+              "price": {
+                "amount": "36.90",
+                "currency": "BRL"
+              },
+              "image": "Frame 51.png"
+            }
+          ]
+        }
+      ],
+      "footer": {
+        "contact_phones": [
+          "(31) 9 7571-2465",
+          "(31) 9 8745-9254"
+        ],
+        "main_locations": [
+          "Shopping Del Rey",
+          "Savassi",
+          "Pampulha"
+        ],
+        "opening_hours": {
+          "days": "Terça a Domingo",
+          "opens": "13:00",
+          "closes": "23:00"
+        },
+        "copyright": "©Todos os direitos reservados por Giovanna Torquato Pedrosa e Sofia Izabela Bellico Reis"
+      }
     },
-    {
-      "nome": "Orgulho - Escanor",
-      "preco": 36.90
+    "delivery": {
+      "url": "https://jojiooo16.github.io/improved-pancake/delivery.html",
+      "title": "Delivery",
+      "sections": [
+        {
+          "title": "Cadastre Seu endereço",
+          "action_label": "Cadastrar"
+        },
+        {
+          "title": "Peça através do delivery também, estamos disponíveis no iFood",
+          "action_label": "Pedir agora",
+          "partner": "iFood",
+          "partner_image": "ifood-removebg-preview 1.png"
+        }
+      ],
+      "footer": {
+        "contact_phones": [
+          "(31) 9 7571-2465",
+          "(31) 9 8745-9254"
+        ],
+        "main_locations": [
+          "Shopping Del Rey",
+          "Savassi",
+          "Pampulha"
+        ],
+        "opening_hours": {
+          "days": "Terça a Domingo",
+          "opens": "13:00",
+          "closes": "23:00"
+        },
+        "copyright": "©Todos os direitos reservados por Giovanna Torquato Pedrosa e Sofia Izabela Bellico Reis"
+      }
     },
-    {
-      "nome": "Inveja - Diane",
-      "preco": 29.90
+    "unidades": {
+      "url": "https://jojiooo16.github.io/improved-pancake/unidades.html",
+      "title": "Unidades",
+      "branches": [
+        {
+          "name": "Otaku Senku",
+          "address": "Savassi - Rua Paraíba 294",
+          "maps_url": "https://maps.app.goo.gl/Dkd9dDYsa6jKfoz48"
+        },
+        {
+          "name": "Otaku Senku",
+          "address": "Pampulha - Av. Otalicio Negrão de Lima 245",
+          "maps_url": "https://maps.app.goo.gl/khryJQF1MkTtLmcX9"
+        },
+        {
+          "name": "Otaku Senku",
+          "address": "Shopping Del Rey - Último Piso",
+          "maps_url": "https://maps.app.goo.gl/j9RC6dGGbd2N9uD27"
+        }
+      ],
+      "footer": {
+        "contact_phones": [
+          "(31) 9 7571-2465",
+          "(31) 9 8745-9254"
+        ],
+        "main_locations": [
+          "Shopping Del Rey",
+          "Savassi",
+          "Pampulha"
+        ],
+        "opening_hours": {
+          "days": "Terça a Domingo",
+          "opens": "13:00",
+          "closes": "23:00"
+        },
+        "copyright": "©Todos os direitos reservados por Giovanna Torquato Pedrosa e Sofia Izabela Bellico Reis"
+      }
     },
-    {
-      "nome": "Gula - Merlin",
-      "preco": 34.90
-    },
-    {
-      "nome": "Preguiça - King",
-      "preco": 36.90
-    },
-    {
-      "nome": "Ganância - Ban",
-      "preco": 36.90
-    },
-    {
-      "nome": "Luxuria - gowther",
-      "preco": 36.90
+    "carrinho": {
+      "url": "https://jojiooo16.github.io/improved-pancake/carrinho.html",
+      "title": "Carrinho",
+      "initial_state": {
+        "products": [],
+        "products_subtotal": "0,00",
+        "shipping": "0,00",
+        "coupon_prompt": "Adicione seu cupom",
+        "total": "0,00",
+        "currency": "BRL"
+      },
+      "continue_button": "Continuar",
+      "footer": {
+        "contact_phones": [
+          "(31) 9 7571-2465",
+          "(31) 9 8745-9254"
+        ],
+        "main_locations": [
+          "Shopping Del Rey",
+          "Savassi",
+          "Pampulha"
+        ],
+        "opening_hours": {
+          "days": "Terça a Domingo",
+          "opens": "13:00",
+          "closes": "23:00"
+        },
+        "copyright": "©Todos os direitos reservados por Giovanna Torquato Pedrosa e Sofia Izabela Bellico Reis"
+      }
     }
-  ],
-  "kusuriya_no_hitorigoto": [
-    {
-      "nome": "Veneno - Maomao",
-      "preco": 36.90
-    },
-    {
-      "nome": "Leque Violeta - jishi",
-      "preco": 36.90
-    },
-    {
-      "nome": "Pétalas de Morango - Concubina Gyokuyou",
-      "preco": 44.90
-    },
-    {
-      "nome": "Safira Boba - Concubina Lihua",
-      "preco": 36.90
-    },
-    {
-      "nome": "Flores de Lishu - Concubina Lishu",
-      "preco": 36.90
-    },
-    {
-      "nome": "Arroz Samurai - Jin",
-      "preco": 36.90
-    }
+  },
+  "notes": [
+    "Os nomes e valores do cardápio foram transcritos da página pública. As imagens são referenciadas pelos nomes de arquivo originais, relativos ao site.",
+    "As grafias de nomes e títulos foram mantidas como aparecem no site."
   ]
 }
-
-
